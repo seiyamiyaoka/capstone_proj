@@ -1,0 +1,1 @@
+docker run --name container-nginx -d -p 80:80 cap_nginx

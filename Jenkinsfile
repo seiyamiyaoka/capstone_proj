@@ -1,9 +1,9 @@
 pipeline {
   agent any
   stages {
-    stage('check') {
+    stage('HTML lint') {
       steps {
-        sh 'echo hello'
+        sh 'tidy -q -e /html/*.html'
       }
     }
   }

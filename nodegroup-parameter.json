@@ -1,0 +1,38 @@
+[
+  {
+    "ParameterKey": "VpcId",
+    "ParameterValue": "vpc-0e29c8e8324d85c4c"
+  },
+  {
+    "ParameterKey": "ClusterName",
+    "ParameterValue": "capstone-eks"
+  },
+  {
+    "ParameterKey": "ClusterControlPlaneSecurityGroup",
+    "ParameterValue": "sg-06c4b43fa27090a95"
+  },
+  {
+    "ParameterKey": "NodeAutoScalingGroupMaxSize",
+    "ParameterValue": "3"
+  },
+  {
+    "ParameterKey": "NodeAutoScalingGroupMinSize",
+    "ParameterValue": "1"
+  },
+  {
+    "ParameterKey": "NodeImageId",
+    "ParameterValue": "ami-03a55127c613349a7"
+  },
+  {
+    "ParameterKey": "NodeInstanceType",
+    "ParameterValue": "t2.medium"
+  },
+  {
+    "ParameterKey": "KeyName",
+    "ParameterValue": "jenkins"
+  },
+  {
+    "ParameterKey": "Subnets",
+    "ParameterValue": "subnet-00e860838fba2dca7,subnet-0f4af217624d7177b,subnet-0f22e63bac29a52f3"
+  }
+]
