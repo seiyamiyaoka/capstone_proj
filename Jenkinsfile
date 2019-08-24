@@ -28,6 +28,7 @@ pipeline {
     }
     stage('push ecr') {
       steps {
+        sh('aws configure')
         sh("eval \$(aws ecr get-login --region us-west-2 --no-include-email)")
         sh 'make push_ecr'
       }
