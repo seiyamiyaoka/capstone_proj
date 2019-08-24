@@ -2,6 +2,7 @@
 cfn stackname: capstone-eks
 cfn stackname: capstone-nodegroup
 us-west-2をつかっている
+jenkins: http://ec2-54-201-54-203.us-west-2.compute.amazonaws.com:8080
 
 https://docs.aws.amazon.com/ja_jp/eks/latest/userguide/create-kubeconfig.html
 
