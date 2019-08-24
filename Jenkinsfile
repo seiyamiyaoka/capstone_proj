@@ -26,5 +26,10 @@ pipeline {
         sh 'make add_tag'
       }
     }
+    stage('push ecr') {
+      steps {
+        sh 'make push_ecr'
+      }
+    }
   }
 }
