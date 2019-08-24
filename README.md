@@ -18,3 +18,16 @@ clusterとnodeのセキュリティグループ作成
 kubenetesにaws iamのconfigを割り当て
 
 nodesにデプロイするためにjsonファイルを作成しapplyする
+
+step10にlint失敗のログあり
+
+hadolint setup
+https://7me.oji.0j0.jp/2018/11/14/docker-linter-hadolint-memo/
+
+
+ubuntu docker install
+
+userにeksとecrの権限付与
+
+
+

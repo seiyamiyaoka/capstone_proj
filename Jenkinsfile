@@ -11,9 +11,14 @@ pipeline {
         sh 'tidy -q -e html/*.html'
       }
     }
-    stage ("lint dockerfile") {
+    stage('Dockerfile lint') {
       steps {
         sh 'hadolint Dockerfile'
+      }
+    }
+    stage('docker build') {
+      steps {
+        sh 'make build_nginx'
       }
     }
   }
