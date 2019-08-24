@@ -28,9 +28,9 @@ pipeline {
     }
     stage('push ecr') {
       steps {
-        sh('aws configure')
-        sh("eval \$(aws ecr get-login --region us-west-2 --no-include-email)")
-        sh 'make push_ecr'
+        docker.withRegistry("381271138029.dkr.ecr.us-west-2.amazonaws.com", "ecr:us-west-2:cap_proj") {
+          docker.image("cap_nginx:v1").push()
+        }
       }
     }
   }
