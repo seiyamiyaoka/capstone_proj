@@ -21,5 +21,10 @@ pipeline {
         sh 'make build_nginx'
       }
     }
+    stage('docker tag') {
+      steps {
+        sh 'make add_tag'
+      }
+    }
   }
 }
