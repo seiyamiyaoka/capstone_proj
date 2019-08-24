@@ -29,5 +29,6 @@ ubuntu docker install
 
 userにeksとecrの権限付与
 
+ubuntu userにdockerコマンドを実行するグループにいれる
 
 
