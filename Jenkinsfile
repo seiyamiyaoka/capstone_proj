@@ -28,6 +28,7 @@ pipeline {
     }
     stage('push ecr') {
       steps {
+        sh("eval \$(aws ecr get-login --no-include-email | sed 's|https://||')")
         sh 'make push_ecr'
       }
     }
