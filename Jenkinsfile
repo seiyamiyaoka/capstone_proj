@@ -42,7 +42,7 @@ pipeline {
         sh 'kubectl apply -f eks-deployment.yml'
       }
     }
-    state('create service') {
+    stage('create service') {
       steps {
         sh 'kubectl apply -f eks-service.yml'
       }
