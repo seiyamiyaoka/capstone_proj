@@ -1,51 +1,38 @@
-## name
-cfn stackname: capstone-eks
-cfn stackname: capstone-nodegroup
-us-west-2をつかっている
-jenkins: http://ec2-54-201-54-203.us-west-2.compute.amazonaws.com:8080
+## over view
 
-https://docs.aws.amazon.com/ja_jp/eks/latest/userguide/create-kubeconfig.html
+- rolling deploy
+- jenkins
+- cloudformation
 
-## cmd
-- jenksins build
-- install blue ocean
-- nginx build
+## setup
 
-## memo
-AWS::CloudFormation::Interfaceとは
-AWSコンソールに表示される設定。一番右に出現
-clusterとnodeのセキュリティグループ作成
-kubenetesにaws iamのconfigを割り当て
+### jenkins setup
 
-nodesにデプロイするためにjsonファイルを作成しapplyする
+1. build ec2 instance used by jenkins
+2. plugin install(blue ocean) and github credential
+3. jenkins pipeline check(ex: sh 'echo hello')
 
-step10にlint失敗のログあり
+### eks setup
+1. . create.sh capstone-eks template-eks.yml parameter.json(create base aws resource)
+2. make create_cluster
+3. . create.sh capstone-nodegroup template-eks-nodegroup.yml nodegroup-parameter.json
 
-hadolint setup
-https://7me.oji.0j0.jp/2018/11/14/docker-linter-hadolint-memo/
+### Docker setup(local env)
+1. using nginx base image, and edit html dir.(write myname)
 
+### ecr and eks setup in jenkins server
+1. install kubectl
+2. upgrade awscli. and setup ecr and eks credential(check region and validate command at jenkins user)
 
-ubuntu docker install
-
-userにeksとecrの権限付与
-
-ubuntu userにdockerコマンドを実行するグループにいれる
-
-ecrにdeployできるようになった。jenkinsuserでのawsのcredential設定ができていなかったのが問題
-
-eksでecrのimageを使うようにする
-deploymentとservice作成
-nginxが起動している状態
-
-ローリングデプロイまたはblue/greenデプロイを実装
-
-kubenetes ubuntu download
-https://kubernetes.io/docs/tasks/tools/install-kubectl/
+### pipeline setting
+1. lint and docker image push ecr. and execute kubectl command.
 
 
-## 自分の状況
-ローカルでeks clusuter作成済み, iamのroleもec2のなかとlocalでは違うので権限を与える必要があった
+## mypipeline
+1. lint check(html and dockerfile)
+2. ecr push(build image and set tag)
+3. apply deployment and service
 
-https://docs.aws.amazon.com/ja_jp/eks/latest/userguide/create-kubeconfig.html
 
-めんどうだがimageのversion, deploymentのversionを変更したら反映可能
+## how to update content
+if you update html, you should update docker image version and deployment version Makefile version.
