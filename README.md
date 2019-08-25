@@ -47,3 +47,5 @@ https://kubernetes.io/docs/tasks/tools/install-kubectl/
 ローカルでeks clusuter作成済み, iamのroleもec2のなかとlocalでは違うので権限を与える必要があった
 
 https://docs.aws.amazon.com/ja_jp/eks/latest/userguide/create-kubeconfig.html
+
+めんどうだがimageのversion, deploymentのversionを変更したら反映可能
