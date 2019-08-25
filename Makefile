@@ -14,6 +14,6 @@ describe_cls:
 container_restart:
 	docker restart container-nginx
 add_tag:
-	docker tag cap_nginx:v1.1 381271138029.dkr.ecr.us-west-2.amazonaws.com/cap_nginx:v1.1
+	docker tag cap_nginx:v1.1 381271138029.dkr.ecr.us-west-2.amazonaws.com/cap_nginx:v1.2
 push_ecr:
-	docker push 381271138029.dkr.ecr.us-west-2.amazonaws.com/cap_nginx:v1.1
+	docker push 381271138029.dkr.ecr.us-west-2.amazonaws.com/cap_nginx:v1.2
