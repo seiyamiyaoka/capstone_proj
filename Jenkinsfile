@@ -37,5 +37,10 @@ pipeline {
         sh 'kubectl get svc'
       }
     }
+    stage('create deployment') {
+      steps {
+        sh 'kubectl apply -f eks-deployment.yml'
+      }
+    }
   }
 }
