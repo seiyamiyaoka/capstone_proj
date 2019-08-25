@@ -31,4 +31,19 @@ userにeksとecrの権限付与
 
 ubuntu userにdockerコマンドを実行するグループにいれる
 
+ecrにdeployできるようになった。jenkinsuserでのawsのcredential設定ができていなかったのが問題
 
+eksでecrのimageを使うようにする
+deploymentとservice作成
+nginxが起動している状態
+
+ローリングデプロイまたはblue/greenデプロイを実装
+
+kubenetes ubuntu download
+https://kubernetes.io/docs/tasks/tools/install-kubectl/
+
+
+## 自分の状況
+ローカルでeks clusuter作成済み, iamのroleもec2のなかとlocalでは違うので権限を与える必要があった
+
+https://docs.aws.amazon.com/ja_jp/eks/latest/userguide/create-kubeconfig.html

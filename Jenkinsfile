@@ -32,5 +32,10 @@ pipeline {
         sh 'make push_ecr'
       }
     }
+    stage('check eks') {
+      steps {
+        sh 'kubectl get svc'
+      }
+    }
   }
 }
